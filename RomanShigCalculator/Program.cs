@@ -1,30 +1,34 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-Console.WriteLine("please enter two numbers and operator +  -  *  /");
-int num1= Convert.ToInt16( Console.ReadLine());
-int num2 = Convert.ToInt16(Console.ReadLine());
-string ope = Console.ReadLine();
+
+
 
 bool yes = true;
 
 while (yes)
 {
+    Console.WriteLine("please enter two numbers and operator +  -  *  /");
+    int num1 = Convert.ToInt16(Console.ReadLine());
+    int num2 = Convert.ToInt16(Console.ReadLine());
+    string ope = Console.ReadLine();
+
+
+
     switch (ope)
     {
         case "+":
-            Console.WriteLine(num1+num2);
+            Console.WriteLine(num1.ToString() + ope + num2.ToString() + '=' + (num1 + num2).ToString());
             yes = false;
             break;
         case "-":
-            Console.WriteLine(num1 - num2);
+            Console.WriteLine(num1.ToString()+ope+num2.ToString()+'='+(num1 - num2).ToString());
             yes = false;
             break;
         case "*":
-            Console.WriteLine(num1 * num2);
+            Console.WriteLine(num1.ToString() + ope + num2.ToString() + '=' + (num1 * num2).ToString());
             yes = false;
             break;
         case "/":
-            Console.WriteLine(num1 / num2);
+            Console.WriteLine(num1.ToString() + ope + num2.ToString() + '=' + (num1 / num2).ToString());
             yes = false;
             break;
         default:
@@ -33,8 +37,12 @@ while (yes)
             break;
     }
 
+    Console.WriteLine("if wont another run enter y");
+    if (Console.ReadLine().ToLower() == "y")
+    {
+        yes = true;
 
-
+    }
 
 
 
